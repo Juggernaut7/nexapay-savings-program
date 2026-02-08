@@ -8,7 +8,13 @@ pub struct Vault {
     /// Bump seed for PDA validation.
     pub bump: u8,
     
-    /// Total amount of lamports deposited in this vault.
+    /// The SPL Token Mint (e.g., USDC).
+    pub mint: Pubkey,
+    
+    /// The Token Account owned by the Vault PDA.
+    pub vault_token_account: Pubkey,
+    
+    /// Total amount of tokens deposited in this vault.
     pub total_deposited: u64,
     
     /// Number of unique members who have deposited.
@@ -16,6 +22,6 @@ pub struct Vault {
 }
 
 impl Vault {
-    // Discriminator (8) + Pubkey (32) + u8 (1) + u64 (8) + u64 (8)
-    pub const LEN: usize = 8 + 32 + 1 + 8 + 8;
+    // Discriminator (8) + Pubkey (32) + u8 (1) + Pubkey (32) + Pubkey (32) + u64 (8) + u64 (8)
+    pub const LEN: usize = 8 + 32 + 1 + 32 + 32 + 8 + 8;
 }

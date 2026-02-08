@@ -18,3 +18,4 @@ default = []
 [dependencies]
 anchor-lang = { workspace = true }
 solana-program = { workspace = true }
+anchor-spl = "0.29.0"
