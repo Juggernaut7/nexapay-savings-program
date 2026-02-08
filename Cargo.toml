@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "programs/nexapay-savings"
+]
+
+[workspace.dependencies]
+anchor-lang = "0.29.0"  # Using a stable, widely compatible version
+solana-program = "1.18.0"
